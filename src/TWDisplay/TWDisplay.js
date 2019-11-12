@@ -2,6 +2,8 @@ import React from 'react';
 
 import './TWDisplay.scss';
 
+import subsData from './Subs.json';
+
 class TWDisplay extends React.Component {
   state = {
   }
@@ -17,7 +19,7 @@ class TWDisplay extends React.Component {
     // loops through approved teams
     approvedTeams.forEach((at) => {
       const team = at[0];
-      console.error(team);
+      console.error(team.id);
       const toonsNeeded = this.selectRequiredToons(team);
       const comparedToons = [];
 
@@ -40,8 +42,12 @@ class TWDisplay extends React.Component {
       if (comparedToons.length > 0) {
         comparedToons.forEach((squad) => {
           // if the squad isn't full, add an applicable character
+
+          // THIS IS WHERE I'VE LEFT OFF
           if (comparedToons.length < 5) {
-            const toonToAdd = this.selectToonToAdd();
+            const emptySlots = comparedToons.length;
+            console.error(emptySlots);
+            const toonToAdd = this.selectToonToAdd(team.id);
             comparedToons.push(toonToAdd);
           }
         });
@@ -69,7 +75,7 @@ class TWDisplay extends React.Component {
     return requiredToons;
   };
 
-  selectToonToAdd = () => {
+  selectToonToAdd = (teamId) => {
 
   };
 
