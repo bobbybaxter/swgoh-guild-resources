@@ -15,6 +15,9 @@ class TWDisplay extends React.Component {
   validateTeams = (player) => {
     const approvedTeams = [...this.props.approvedTeams];
     const newRoster = [];
+    const playerToons = Object.values(player)
+      .map((p) => p)[0]
+      .map((n) => n.data.name);
 
     approvedTeams.forEach((at) => {
       const team = at[0];
@@ -26,32 +29,23 @@ class TWDisplay extends React.Component {
       if (team.toon4Req === true) { toonsNeeded.push(team.toon4Name); }
       if (team.toon5Req === true) { toonsNeeded.push(team.toon5Name); }
 
-      player.units.forEach((t) => {
-        const toon = t.data;
-        const neededToon = toonsNeeded.filter((tn) => tn === toon.name);
-        // something wrong with comparing toons inside the newRoster.forEach loop
-        if (neededToon.length > 0) {
-          // newRoster.forEach((squad) => {
-          //   if (!squad.includes(neededToon[0])) {
-          //     comparedToons.push(neededToon[0]);
-          //   }
-          // });
-          newRoster.forEach((squad) => {
-            if (!squad.includes(neededToon[0])) {
-              comparedToons.push(neededToon[0]);
-            }
-          });
-          // console.error('comparedToons', comparedToons);
-        }
-      });
+      if (playerToons) {
+        toonsNeeded.forEach((toonNeeded) => {
+          const matchedToon = playerToons.filter((pt) => pt === toonNeeded);
+          if (matchedToon[0]) {
+            const index = playerToons.indexOf(matchedToon[0]);
+            comparedToons.push(matchedToon[0]);
+            playerToons.splice(index, 1);
+          }
+        });
+      }
 
       if (comparedToons.length > 0) {
         newRoster.push(comparedToons);
       }
     });
 
-    console.error('newRoster', newRoster);
-
+    console.error(newRoster);
     return newRoster;
   }
 
