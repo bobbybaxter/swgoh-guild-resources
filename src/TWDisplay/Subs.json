@@ -1,0 +1,175 @@
+[{
+  "id": "SITH_EMPIRE_W_MALAK",
+  "subs": "Sith Trooper, Sith Assassin, Sith Marauder"
+}, {
+  "id": "SITH_EMPIRE_WO_MALAK",
+  "subs": "Sith Assassin, Sith Marauder"
+}, {
+  "id": "JEDI_REVAN",
+  "subs": "Bastila Shan, General Kenobi, Ezra Bridger, Hermit Yoda, Obi-Wan Kenobi (Old Ben), Juhani, Plo Koon"
+}, {
+  "id": "SITH_TRI",
+  "subs": "Sith Trooper, Grand Admiral Thrawn, Bastila Shan (Fallen), Count Dooku, Sith Assassin, Sith Marauder"
+}, {
+  "id": "REBELS_CLS",
+  "subs": "C-3PO, R2-D2, Obi-Wan Kenobi (Old Ben), General Kenobi, Captain Han Solo, Ahsoka Tano (Fulcrum)"
+}, {
+  "id": "GALACTIC_REPUBLIC",
+  "subs": "Barriss Offee, Clone Wars Chewbacca, Grand Master Yoda, C-3PO, CT-7567 \"Rex\", CT-5555 \"Fives\""
+}, {
+  "id": "GEONOSIANS",
+  "subs": ""
+}, {
+  "id": "NS_ASAJJ",
+  "subs": "Nightsister Spirit, Nightsister Acolyte, Enfys Nest, Barriss Offee, Hermit Yoda"
+}, {
+  "id": "NS_MT",
+  "subs": "Nightsister Spirit, Nightsister Acolyte, Enfys Nest, Barriss Offee, Hermit Yoda"
+}, {
+  "id": "NS_MT_NA",
+  "subs": ""
+}, {
+  "id": "SEP_DROIDS",
+  "subs": "IG-100 MagnaGuard, Nute Gunray, Count Dooku, Wat Tambor"
+}, {
+  "id": "CLONES_SHAAKTI",
+  "subs": "CT-7567 \"Rex\", CT-21-0408 \"Echo\", CT-5555 \"Fives\", CC-2224 \"Cody\""
+}, {
+  "id": "REX_501",
+  "subs": ""
+}, {
+  "id": "JEDI_BASTILA",
+  "subs": "Jolee Bindo, Grand Master Yoda, General Kenobi, Ezra Bridger, Hermit Yoda, Aayla Secura, Jedi Knight Anakin, Obi-Wan Kenobi (Old Ben)"
+}, {
+  "id": "FO_KRU",
+  "subs": "First Order Officer, First Order Stormtrooper, Captain Phasma, First Order SF TIE Pilot, Enfys Nest, Barriss Offee"
+}, {
+  "id": "BH_BOSSK",
+  "subs": "Zam Wessell, Greedo, Embo, IG-88, Cad Bane, Aurra Sing"
+}, {
+  "id": "BH_JANGO",
+  "subs": "Dengar, Zam Wesell, Greedo, Embo, IG-88, Cad Bane, Aurra Sing"
+}, {
+  "id": "EP",
+  "subs": "Grand Moff Tarkin, TIE Fighter Pilot, Imperial Probe Droid, Count Dooku, Death Trooper, Director Krennic"
+}, {
+  "id": "JTR",
+  "subs": "Rey (Scavenger), Finn, Resistance Trooper, RD-D2, C-3PO, Amilyn Holdo, L3-37, General Kenobi, Enfys Nest"
+}, {
+  "id": "EWOKS",
+  "subs": "Logray, Ewok Scout, Teebo, C-3PO"
+}, {
+  "id": "OR_CARTH",
+  "subs": "Juhani, Wampa, Boba Fett, Darth Sidious, Chirrut Îmwe, Baze Malbus"
+}, {
+  "id": "QIRA",
+  "subs": "Mission Vao, Zaalbar, Enfys Nest, Young Han Solo, Han Solo, Chewbacca, Young Lando Calrissian, Cad Bane, Barriss Offee, Wat Tambor"
+}, {
+  "id": "IT",
+  "subs": "Death Trooper, Grand Admiral Thrawn, Shoretrooper, Stormtrooper"
+}, {
+  "id": "REBELS_WIGGS",
+  "subs": "Ahsoka Tano (Fulcrum), Chirrut Îmwe, Baze Malbus, Stormtrooper Han, Obi-Wan Kenobi (Old Ben)"
+}, {
+  "id": "PHOENIX",
+  "subs": "Sabine Wren, Ezra Bridger, Chopper"
+}, {
+  "id": "ROGUE_ONE",
+  "subs": "Chirrut Îmwe, Baze Malbus, Bistan, C-3PO, Scarif Rebel Pathfinder, Pao, Bistan, Han Solo, Chewbacca"
+}, {
+  "id": "IT_THRAWN",
+  "subs": "Death Trooper, Shoretrooper, Stormtrooper"
+}, {
+  "id": "JEDI_QGJ",
+  "subs": "Jolee Bindo, Grand Master Yoda, General Kenobi, Ezra Bridger, Hermit Yoda, Aayla Secura, Jedi Knight Anakin, Obi-Wan Kenobi (Old Ben)"
+}, {
+  "id": "REX_WAMPA",
+  "subs": "Hermit Yoda"
+}, {
+  "id": "WAMPA_SOLO",
+  "subs": ""
+}, {
+  "id": "JAWAS",
+  "subs": ""
+}, {
+  "id": "CLONES_CODY",
+  "subs": ""
+}, {
+  "id": "EP_ANTI_REBEL",
+  "subs": ""
+}, {
+  "id": "EP_ANTI-TRAYA",
+  "subs": ""
+}, {
+  "id": "EP_TRIO",
+  "subs": ""
+}, {
+  "id": "EP_TRAYA",
+  "subs": ""
+}, {
+  "id": "SION_SOLO",
+  "subs": ""
+}, {
+  "id": "DK_ANTI_REBEL",
+  "subs": ""
+}, {
+  "id": "DROIDS_ANTI_MALAK",
+  "subs": ""
+}, {
+  "id": "NEST_SOLO",
+  "subs": ""
+}, {
+  "id": "EWOKS_C3PO",
+  "subs": ""
+}, {
+  "id": "GALACTIC_REPUBLIC_C3PO",
+  "subs": ""
+}, {
+  "id": "GK",
+  "subs": ""
+}, {
+  "id": "IG-88_HI",
+  "subs": ""
+}, {
+  "id": "JEDI_BASTILA_REVAN",
+  "subs": ""
+}, {
+  "id": "MAGMA",
+  "subs": ""
+}, {
+  "id": "NS_NEST",
+  "subs": ""
+}, {
+  "id": "QIRA_NEST_HODA",
+  "subs": ""
+}, {
+  "id": "QIRA_NEST_HODA_FULL",
+  "subs": ""
+}, {
+  "id": "REBELS_CLS_THRAWN",
+  "subs": ""
+}, {
+  "id": "REBELS_CLS_CHAZE",
+  "subs": ""
+}, {
+  "id": "REBELS_DANGER_ZONE",
+  "subs": ""
+}, {
+  "id": "JTR_DROIDS",
+  "subs": ""
+}, {
+  "id": "JTR_HOLDO",
+  "subs": ""
+}, {
+  "id": "REX",
+  "subs": ""
+}, {
+  "id": "SEP_NUTE",
+  "subs": ""
+}, {
+  "id": "SITH_MAUL",
+  "subs": ""
+}, {
+  "id": "ZADER",
+  "subs": ""
+}]
