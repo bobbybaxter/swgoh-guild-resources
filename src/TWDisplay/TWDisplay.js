@@ -19,9 +19,8 @@ class TWDisplay extends React.Component {
     // loops through approved teams
     approvedTeams.forEach((at) => {
       const team = at[0];
-      console.error(team.id);
       const toonsNeeded = this.selectRequiredToons(team);
-      const comparedToons = [];
+      const tempSquad = [];
 
       // if the player has the required toons,
       // that toon is removed from their array and
@@ -31,7 +30,7 @@ class TWDisplay extends React.Component {
           const matchedToon = playerToons.filter((pt) => pt === toonNeeded);
           if (matchedToon[0]) {
             const index = playerToons.indexOf(matchedToon[0]);
-            comparedToons.push(matchedToon[0]);
+            tempSquad.push(matchedToon[0]);
             playerToons.splice(index, 1);
           }
         });
@@ -39,29 +38,27 @@ class TWDisplay extends React.Component {
 
       // fill in the rest of the squad members for
       // teams that have required toons
-      if (comparedToons.length > 0) {
-        comparedToons.forEach((squad) => {
-          // if the squad isn't full, add an applicable character
-
-          // THIS IS WHERE I'VE LEFT OFF
-          if (comparedToons.length < 5) {
-            const emptySlots = comparedToons.length;
-            console.error(emptySlots);
-            const toonToAdd = this.selectToonToAdd(team.id);
-            comparedToons.push(toonToAdd);
+      if (tempSquad.length > 0) {
+        if (tempSquad.length < 5) {
+          const emptySlots = 5 - tempSquad.length;
+          for (let i = 0; i < emptySlots; i += 1) {
+            const toonToAdd = this.selectToonToAdd(playerToons, team.id, i);
+            const matchedToon = playerToons.filter((pt) => pt === toonToAdd);
+            if (toonToAdd) {
+              const index = playerToons.indexOf(matchedToon[0]);
+              tempSquad.push(toonToAdd);
+              playerToons.splice(index, 1);
+            }
           }
-        });
-        newRoster.push(comparedToons);
+        }
+        newRoster.push(tempSquad);
       }
     });
-
-    console.error(newRoster);
     return newRoster;
   }
 
   getTeamComps = () => {
     const rawPlayerData = [...this.props.rawPlayerData];
-    console.error(rawPlayerData[0]);
     this.buildTeams(rawPlayerData[0]);
   }
 
@@ -75,8 +72,13 @@ class TWDisplay extends React.Component {
     return requiredToons;
   };
 
-  selectToonToAdd = (teamId) => {
-
+  selectToonToAdd = (playerToons, teamId, index) => {
+    const subs = subsData
+      .filter((sub) => sub.id === teamId)[0]
+      .subs
+      .split(', ');
+    const matchedToon = subs.find((sub) => playerToons.indexOf(sub) !== -1);
+    return matchedToon;
   };
 
   render() {
