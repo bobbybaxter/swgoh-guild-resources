@@ -15,6 +15,9 @@ class TWDisplay extends React.Component {
     const playerToons = Object.values(player)
       .map((p) => p)[0]
       .map((n) => n.data.name);
+    const toonsWithPower = Object.values(player)
+      .map((p) => p)[0]
+      .map((n) => ({ name: n.data.name, power: n.data.power }));
 
     // loops through approved teams
     approvedTeams.forEach((at) => {
@@ -42,7 +45,7 @@ class TWDisplay extends React.Component {
         if (tempSquad.length < 5) {
           const emptySlots = 5 - tempSquad.length;
           for (let i = 0; i < emptySlots; i += 1) {
-            const toonToAdd = this.selectToonToAdd(playerToons, team.id, i);
+            const toonToAdd = this.selectToonToAdd(toonsWithPower, playerToons, team.id);
             const matchedToon = playerToons.filter((pt) => pt === toonToAdd);
             if (toonToAdd) {
               const index = playerToons.indexOf(matchedToon[0]);
@@ -51,7 +54,14 @@ class TWDisplay extends React.Component {
             }
           }
         }
-        newRoster.push(tempSquad);
+        // if the squad is incomplete, put the toons back in the pool
+        if (tempSquad.length < 5) {
+          tempSquad.forEach((squadMember) => {
+            playerToons.push(squadMember);
+          });
+        } else {
+          newRoster.push(tempSquad);
+        }
       }
     });
     return newRoster;
@@ -72,13 +82,29 @@ class TWDisplay extends React.Component {
     return requiredToons;
   };
 
-  selectToonToAdd = (playerToons, teamId, index) => {
-    const subs = subsData
+  selectToonToAdd = (toonsWithPower, playerToons, teamId) => {
+    const subsWithPower = [];
+    const filteredToonsWithPower = toonsWithPower
+      .filter((toon) => playerToons.indexOf(toon.name) !== -1);
+    // fills in subsWithPower by finding the subs in that team and
+    // returns the toonsWithPower objects of those toons
+    subsData
       .filter((sub) => sub.id === teamId)[0]
       .subs
-      .split(', ');
-    const matchedToon = subs.find((sub) => playerToons.indexOf(sub) !== -1);
-    return matchedToon;
+      .split(', ')
+      .forEach((sub) => {
+        const matchedToonWithPower = filteredToonsWithPower.filter((twp) => twp.name === sub)[0];
+        if (matchedToonWithPower) {
+          subsWithPower.push(matchedToonWithPower);
+        }
+      });
+    // sorts the subs by the highest power
+    // then returns an array of the names of those subs
+    subsWithPower.sort((a, b) => ((a.power < b.power) ? 1 : -1));
+    const sortedSubs = Object.values(subsWithPower)
+      .map((s) => s)
+      .map((p) => p.name);
+    return sortedSubs[0];
   };
 
   render() {
