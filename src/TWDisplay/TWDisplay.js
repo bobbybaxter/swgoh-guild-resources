@@ -2,15 +2,30 @@ import React from 'react';
 
 import './TWDisplay.scss';
 
+import GuildRoster from '../GuildRoster/GuildRoster';
+import PlayerRoster from '../PlayerRoster/PlayerRoster';
+
 import subsData from './Subs.json';
 
 class TWDisplay extends React.Component {
   state = {
+    guildRoster: [],
+  };
+
+  buildGuildRoster = (guildMembersData) => {
+    const tempRoster = [];
+    guildMembersData.forEach((guildMemberData) => {
+      const playerName = guildMemberData.data.name;
+      const playerRoster = this.buildPlayerTeams(guildMemberData);
+      tempRoster.push([{ playerName, playerRoster }]);
+    });
+    // remap tempRoster from array to object
+    return tempRoster;
   }
 
-  buildTeams = (player) => {
+  buildPlayerTeams = (player) => {
     // definitions
-    const approvedTeams = [...this.props.approvedTeams];
+    const approvedTeamList = [...this.props.approvedTeams];
     const newRoster = [];
     const playerToons = Object.values(player)
       .map((p) => p)[0]
@@ -19,11 +34,17 @@ class TWDisplay extends React.Component {
       .map((p) => p)[0]
       .map((n) => ({ name: n.data.name, power: n.data.power }));
 
+    while (approvedTeamList.length) {
+      console.error(approvedTeamList.length);
+      const bestOverallTeams = this.findBestOverallTeams(approvedTeamList, playerToons);
+      approvedTeamList.shift();
+    }
+
     // loops through approved teams
-    approvedTeams.forEach((at) => {
-      const team = at[0];
+    approvedTeamList.forEach((approvedTeam) => {
+      const team = approvedTeam;
       const toonsNeeded = this.selectRequiredToons(team);
-      const tempSquad = [];
+      let tempSquad = [];
 
       // if the player has the required toons,
       // that toon is removed from their array and
@@ -32,8 +53,14 @@ class TWDisplay extends React.Component {
         toonsNeeded.forEach((toonNeeded) => {
           const matchedToon = playerToons.filter((pt) => pt === toonNeeded);
           if (matchedToon[0]) {
+            const matchedToonWithPower = toonsWithPower
+              .find((toon) => matchedToon[0] === toon.name);
             const index = playerToons.indexOf(matchedToon[0]);
-            tempSquad.push(matchedToon[0]);
+            // tempSquad.push(matchedToon[0]);
+            tempSquad.push({
+              name: matchedToonWithPower.name,
+              power: matchedToonWithPower.power,
+            });
             playerToons.splice(index, 1);
           }
         });
@@ -60,6 +87,19 @@ class TWDisplay extends React.Component {
             playerToons.push(squadMember);
           });
         } else {
+          const teamPower = tempSquad
+            .map((a) => a.power)
+            .reduce((b, c) => b + c);
+          // re-maps squad to include key/value pairs
+          tempSquad = {
+            leader: tempSquad[0],
+            toon2: tempSquad[1],
+            toon3: tempSquad[2],
+            toon4: tempSquad[3],
+            toon5: tempSquad[4],
+            teamPower,
+            id: team.id,
+          };
           newRoster.push(tempSquad);
         }
       }
@@ -67,9 +107,17 @@ class TWDisplay extends React.Component {
     return newRoster;
   }
 
+  findBestOverallTeams = () => {
+
+  }
+
   getTeamComps = () => {
     const rawPlayerData = [...this.props.rawPlayerData];
-    this.buildTeams(rawPlayerData[0]);
+    // USED FOR MULTIPLAYER
+    // const guildRoster = this.buildGuildRoster(rawPlayerData);
+    // this.setState({ guildRoster });
+    const playerRoster = this.buildPlayerTeams(rawPlayerData[0]);
+    console.error(playerRoster);
   }
 
   selectRequiredToons = (team) => {
@@ -101,18 +149,32 @@ class TWDisplay extends React.Component {
     // sorts the subs by the highest power
     // then returns an array of the names of those subs
     subsWithPower.sort((a, b) => ((a.power < b.power) ? 1 : -1));
-    const sortedSubs = Object.values(subsWithPower)
-      .map((s) => s)
-      .map((p) => p.name);
-    return sortedSubs[0];
+    // const sortedSubs = Object.values(subsWithPower)
+    //   .map((s) => s)
+    //   .map((p) => p.name);
+    // return sortedSubs[0];
+    return subsWithPower[0];
   };
 
   render() {
+    let printPlayerRosters = [];
+    // can't get printplayerrosters to work
+    if (this.state.guildRoster.length > 0) {
+      printPlayerRosters = this.state.guildRoster.forEach((player) => (<PlayerRoster
+        playerName = {player.playerName}
+        playerRoster = {player.playerRoster}
+      />));
+    }
     return (
       <>
         <div className="twDisplay-header">
           <h2>TW Display</h2>
           <button className="btn btn-primary" onClick={this.getTeamComps}>Get Team Comps</button>
+          <GuildRoster
+            guildRoster = {this.state.guildRoster}
+            approvedTeamOrder = {this.props.approvedTeamOrder}
+          />
+          {printPlayerRosters}
         </div>
       </>
     );

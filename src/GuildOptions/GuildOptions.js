@@ -14,7 +14,6 @@ class GuildOptions extends React.Component {
     return (
       <>
         <div className="guildOptions-header">
-          <h2>Guild Options</h2>
         </div>
       </>
     );

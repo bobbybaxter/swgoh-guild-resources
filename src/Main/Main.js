@@ -119,6 +119,7 @@ class Main extends React.Component {
         <div>
           <GuildOptions />
           <TWDisplay
+            approvedTeamOrder = {approvedTeamOrder}
             approvedTeams = {approvedTeams}
             rawPlayerData = {rawPlayerData}
           />
