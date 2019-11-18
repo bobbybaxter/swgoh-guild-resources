@@ -117,7 +117,7 @@ class Main extends React.Component {
         <div className="main-header text-center">
           <h1>{guildData.name}</h1>
           <div className="container d-flex flex-row justify-content-around">
-            <p>Members: {guildData.member_count}</p>
+            <p>Members: {guildData.profile_count}</p>
             <p>Galactic Power: {guildData.galactic_power ? guildData.galactic_power.toLocaleString() : ''}</p>
           </div>
         </div>
