@@ -7,38 +7,76 @@ import './GuildRoster.scss';
 class GuildRoster extends React.Component {
   state = {
     guildRoster: [],
+    formattedRoster: [],
+  }
+
+  buildColumns = () => {
+    const columns = [{ data: 'name' }, { data: 'lastUpdated' }];
+    const teamIds = [...this.props.approvedTeamOrder];
+    teamIds.map((teamId) => columns.push({ data: teamId }));
+    return columns;
   }
 
   componentDidMount() {
-    this.setState({ guildRoster: this.props.guildRoster });
+    const formattedRoster = this.formatGuildRoster();
+    this.setState({
+      guildRoster: this.props.guildRoster,
+      formattedRoster,
+    });
+  }
+
+  formatGuildRoster = () => {
+    const guildRoster = [...this.props.guildRoster];
+    const newRoster = guildRoster.map((guildMember) => {
+      const teamIds = [...this.props.approvedTeamOrder];
+      const memberData = {};
+      memberData.name = guildMember.playerName;
+      const options = { month: 'short', day: 'numeric', year: 'numeric' };
+      memberData.lastUpdated = new Date(guildMember.lastUpdated * 1000).toLocaleString('en-US', options);
+      // memberData.lastUpdated = new Date(guildMember.lastUpdated * 1000);
+      teamIds.forEach((teamId) => {
+        memberData[teamId] = '';
+      });
+      guildMember.playerRoster.forEach((team) => {
+        memberData[team.id] = team.teamPower;
+      });
+      return memberData;
+    });
+    return newRoster;
   }
 
   printGuildTable = () => {
+    const tables = this.buildColumns();
     $(this.refs.guildTable).DataTable({
       autoWidth: true,
-      columns: [
-        { data: 'id' },
-      ],
-      data: this.state.guildRoster,
-      scrollCollapse: true,
+      columns: tables,
+      data: this.state.formattedRoster,
+      destroy: true,
+      // fixedColumns: {
+      //   leftColumns: 1,
+      // },
+      pageLength: 50,
+      // scrollCollapse: false,
       scrollX: true,
     });
   }
 
   render() {
     let printHeaders = [];
-    if (this.refs.guildRoster) {
+    if (this.refs.guildTable) {
       printHeaders = this.props.approvedTeamOrder.map((team) => <th key={team}>{team}</th>);
+      const nameHeader = <th key="Name">Name</th>;
+      const dateHeader = <th key="LastUpdated">LastUpdated</th>;
+      printHeaders.unshift(dateHeader);
+      printHeaders.unshift(nameHeader);
       this.printGuildTable();
     }
 
     return (
       <>
-        <h2>Guild Roster</h2>
-        <table ref="guildTable" className="display compact nowrap">
+        <table ref="guildTable" className="display compact">
           <thead>
             <tr>
-              <th>{this.refs.guildRoster ? 'Member' : ''}</th>
               {printHeaders}
             </tr>
           </thead>

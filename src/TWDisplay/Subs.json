@@ -12,19 +12,19 @@
   "subs": "Sith Trooper, Grand Admiral Thrawn, Bastila Shan (Fallen), Count Dooku, Sith Assassin, Sith Marauder"
 }, {
   "id": "REBELS_CLS",
-  "subs": "C-3PO, R2-D2, Obi-Wan Kenobi (Old Ben), General Kenobi, Captain Han Solo, Ahsoka Tano (Fulcrum)"
+  "subs": "C-3PO, R2-D2, Obi-Wan Kenobi (Old Ben), Captain Han Solo, Ahsoka Tano (Fulcrum), Baze Malbus, Chirrut Îmwe"
 }, {
   "id": "GALACTIC_REPUBLIC",
-  "subs": "Barriss Offee, Clone Wars Chewbacca, Grand Master Yoda, C-3PO, CT-7567 \"Rex\", CT-5555 \"Fives\""
+  "subs": "Barriss Offee, Clone Wars Chewbacca, Grand Master Yoda, CT-7567 \"Rex\", CT-5555 \"Fives\", Aayla Secura, Qui-Gon Jinn"
 }, {
   "id": "GEONOSIANS",
   "subs": ""
 }, {
   "id": "NS_ASAJJ",
-  "subs": "Nightsister Spirit, Nightsister Acolyte, Enfys Nest, Barriss Offee, Hermit Yoda"
+  "subs": "Nightsister Spirit, Nightsister Acolyte, Nightsister Initiate, Talia"
 }, {
   "id": "NS_MT",
-  "subs": "Nightsister Spirit, Nightsister Acolyte, Enfys Nest, Barriss Offee, Hermit Yoda"
+  "subs": "Nightsister Spirit, Nightsister Acolyte, Nightsister Initiate, Talia"
 }, {
   "id": "NS_MT_NA",
   "subs": ""
@@ -39,22 +39,22 @@
   "subs": ""
 }, {
   "id": "JEDI_BASTILA",
-  "subs": "Jolee Bindo, Grand Master Yoda, General Kenobi, Ezra Bridger, Hermit Yoda, Aayla Secura, Jedi Knight Anakin, Obi-Wan Kenobi (Old Ben)"
+  "subs": "Jolee Bindo, Grand Master Yoda, General Kenobi, Ezra Bridger, Hermit Yoda, Aayla Secura, Obi-Wan Kenobi (Old Ben), Barriss Offee, Juhani, Luminara Unduli, Mace Windu, Plo Koon, Qui-Gon Jinn"
 }, {
   "id": "FO_KRU",
-  "subs": "First Order Officer, First Order Stormtrooper, Captain Phasma, First Order SF TIE Pilot, Enfys Nest, Barriss Offee"
+  "subs": "First Order Officer, First Order Stormtrooper, Captain Phasma, First Order SF TIE Pilot, First Order TIE Pilot"
 }, {
   "id": "BH_BOSSK",
-  "subs": "Zam Wessell, Greedo, Embo, IG-88, Cad Bane, Aurra Sing"
+  "subs": "Jango Fett, Zam Wessell, Greedo, Embo, IG-88, Cad Bane, Aurra Sing"
 }, {
   "id": "BH_JANGO",
   "subs": "Dengar, Zam Wesell, Greedo, Embo, IG-88, Cad Bane, Aurra Sing"
 }, {
   "id": "EP",
-  "subs": "Grand Moff Tarkin, TIE Fighter Pilot, Imperial Probe Droid, Count Dooku, Death Trooper, Director Krennic"
+  "subs": "Grand Moff Tarkin, TIE Fighter Pilot, Imperial Probe Droid, Count Dooku, Director Krennic, Shoretrooper, Grand Admiral Thrawn, Royal Guard, Shoretrooper"
 }, {
   "id": "JTR",
-  "subs": "Rey (Scavenger), Finn, Resistance Trooper, RD-D2, C-3PO, Amilyn Holdo, L3-37, General Kenobi, Enfys Nest"
+  "subs": "Rey (Scavenger), Finn, Resistance Trooper, RD-D2, C-3PO, Amilyn Holdo, L3-37, Poe Dameron, Resistance Pilot, Rose Tico"
 }, {
   "id": "EWOKS",
   "subs": "Logray, Ewok Scout, Teebo, C-3PO"
@@ -66,22 +66,22 @@
   "subs": "Mission Vao, Zaalbar, Enfys Nest, Young Han Solo, Han Solo, Chewbacca, Young Lando Calrissian, Cad Bane, Barriss Offee, Wat Tambor"
 }, {
   "id": "IT",
-  "subs": "Death Trooper, Grand Admiral Thrawn, Shoretrooper, Stormtrooper"
+  "subs": "Death Trooper, Grand Admiral Thrawn, Shoretrooper, Stormtrooper, Magmatrooper"
 }, {
   "id": "REBELS_WIGGS",
-  "subs": "Ahsoka Tano (Fulcrum), Chirrut Îmwe, Baze Malbus, Stormtrooper Han, Obi-Wan Kenobi (Old Ben)"
+  "subs": "Ahsoka Tano (Fulcrum), Chirrut Îmwe, Baze Malbus, Stormtrooper Han, Obi-Wan Kenobi (Old Ben), Admiral Ackbar, Captain Han Solo, Obi-Wan Kenobi (Old Ben), Princess Leia, R2-D2, Scarif Rebel Pathfinder"
 }, {
   "id": "PHOENIX",
   "subs": "Sabine Wren, Ezra Bridger, Chopper"
 }, {
   "id": "ROGUE_ONE",
-  "subs": "Chirrut Îmwe, Baze Malbus, Bistan, C-3PO, Scarif Rebel Pathfinder, Pao, Bistan, Han Solo, Chewbacca"
+  "subs": "Chirrut Îmwe, Baze Malbus, Bistan, C-3PO, Scarif Rebel Pathfinder, Pao, Bistan"
 }, {
   "id": "IT_THRAWN",
   "subs": "Death Trooper, Shoretrooper, Stormtrooper"
 }, {
   "id": "JEDI_QGJ",
-  "subs": "Jolee Bindo, Grand Master Yoda, General Kenobi, Ezra Bridger, Hermit Yoda, Aayla Secura, Jedi Knight Anakin, Obi-Wan Kenobi (Old Ben)"
+  "subs": "Jolee Bindo, Grand Master Yoda, General Kenobi, Ezra Bridger, Hermit Yoda, Aayla Secura, Obi-Wan Kenobi (Old Ben)"
 }, {
   "id": "REX_WAMPA",
   "subs": "Hermit Yoda"
@@ -90,7 +90,7 @@
   "subs": ""
 }, {
   "id": "JAWAS",
-  "subs": ""
+  "subs": "Jawa, Dathcha"
 }, {
   "id": "CLONES_CODY",
   "subs": ""
@@ -126,7 +126,7 @@
   "subs": ""
 }, {
   "id": "GK",
-  "subs": ""
+  "subs": "Wampa, Darth Nihilus, Mother Talzin"
 }, {
   "id": "IG-88_HI",
   "subs": ""
@@ -135,7 +135,7 @@
   "subs": ""
 }, {
   "id": "MAGMA",
-  "subs": ""
+  "subs": "Director Krennic, Grand Moff Tarkin, Imperial Probe Droid, Stormtrooper, Shoretrooper"
 }, {
   "id": "NS_NEST",
   "subs": ""
@@ -156,7 +156,7 @@
   "subs": ""
 }, {
   "id": "JTR_DROIDS",
-  "subs": ""
+  "subs": "Resistance Trooper, Chopper, IG-88, L3-37, T3-M4"
 }, {
   "id": "JTR_HOLDO",
   "subs": ""
@@ -168,8 +168,8 @@
   "subs": ""
 }, {
   "id": "SITH_MAUL",
-  "subs": ""
+  "subs": "Sith Trooper, Sith Assassin, Count Dooku, Darth Sidious, Sith Marauder"
 }, {
   "id": "ZADER",
-  "subs": ""
+  "subs": "Grand Moff Tarkin, Darth Sidious, Boba Fett, Barriss Offee, Mission Vao, Zaalbar, Canderous Ordo, Sith Trooper, Shoretrooper, Stormtrooper, Mother Talzin"
 }]

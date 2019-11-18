@@ -16,8 +16,9 @@ class TWDisplay extends React.Component {
     const tempRoster = [];
     guildMembersData.forEach((guildMemberData) => {
       const playerName = guildMemberData.data.name;
+      const lastUpdated = guildMemberData.data.last_updated;
       const playerRoster = this.buildPlayerTeams(guildMemberData);
-      tempRoster.push([{ playerName, playerRoster }]);
+      tempRoster.push({ playerName, playerRoster, lastUpdated });
     });
     // remap tempRoster from array to object
     return tempRoster;
@@ -68,6 +69,7 @@ class TWDisplay extends React.Component {
         approvedTeamList.splice(index, 1);
       }
     }
+
 
     return newRoster;
   }
@@ -226,10 +228,11 @@ class TWDisplay extends React.Component {
   getTeamComps = () => {
     const rawPlayerData = [...this.props.rawPlayerData];
     // USED FOR MULTIPLAYER
-    // const guildRoster = this.buildGuildRoster(rawPlayerData);
-    // this.setState({ guildRoster });
-    const playerRoster = this.buildPlayerTeams(rawPlayerData[7]);
-    console.error('playerRoster', playerRoster);
+    const guildRoster = this.buildGuildRoster(rawPlayerData);
+    this.setState({ guildRoster });
+    // USED FOR SINGLE PLAYER TESTING
+    // const playerRoster = this.buildPlayerTeams(rawPlayerData[7]);
+    // console.error('playerRoster', playerRoster);
   }
 
   selectRequiredToons = (team) => {
@@ -262,35 +265,34 @@ class TWDisplay extends React.Component {
     // sorts the subs by the highest power
     // then returns an array of the names of those subs
     subsWithPower.sort((a, b) => ((a.power < b.power) ? 1 : -1));
-    // const sortedSubs = Object.values(subsWithPower)
-    //   .map((s) => s)
-    //   .map((p) => p.name);
-    // return sortedSubs[0];
     if (duplicate.length > 0) {
-      return subsWithPower[1];
+      return subsWithPower[duplicate.length];
     }
     return subsWithPower[0];
   };
 
   render() {
     let printPlayerRosters = [];
-    // can't get printplayerrosters to work
+    const guildRoster = [...this.state.guildRoster];
     if (this.state.guildRoster.length > 0) {
-      printPlayerRosters = this.state.guildRoster.forEach((player) => (<PlayerRoster
+      printPlayerRosters = guildRoster.map((player) => (<PlayerRoster
         playerName = {player.playerName}
         playerRoster = {player.playerRoster}
       />));
     }
     return (
       <>
-        <div className="twDisplay-header">
-          <h2>TW Display</h2>
-          {this.props.approvedTeams.length > 0 ? <button className="btn btn-primary" onClick={this.getTeamComps}>Get Team Comps</button> : ''}
-          <GuildRoster
+        <div className="text-center">
+          <div className="d-flex flex-column justify-content-center align-items-center">
+            {this.props.approvedTeams.length > 0 ? <button className="btn btn-primary" onClick={this.getTeamComps}>Get Team Comps</button> : ''}
+          </div>
+          {this.state.guildRoster.length > 0 ? <GuildRoster
             guildRoster = {this.state.guildRoster}
             approvedTeamOrder = {this.props.approvedTeamOrder}
-          />
-          {printPlayerRosters}
+          /> : ''}
+          <div className="d-flex flex-column">
+            {printPlayerRosters}
+          </div>
         </div>
       </>
     );
