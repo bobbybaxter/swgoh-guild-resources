@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/swgoh-guild-resources/static/css/main.0c96a878.chunk.css",
+    "main.js": "/swgoh-guild-resources/static/js/main.e7983a45.chunk.js",
+    "main.js.map": "/swgoh-guild-resources/static/js/main.e7983a45.chunk.js.map",
+    "runtime-main.js": "/swgoh-guild-resources/static/js/runtime-main.2ff03298.js",
+    "runtime-main.js.map": "/swgoh-guild-resources/static/js/runtime-main.2ff03298.js.map",
+    "static/css/2.b0bb7f2c.chunk.css": "/swgoh-guild-resources/static/css/2.b0bb7f2c.chunk.css",
+    "static/js/2.c5362fcc.chunk.js": "/swgoh-guild-resources/static/js/2.c5362fcc.chunk.js",
+    "static/js/2.c5362fcc.chunk.js.map": "/swgoh-guild-resources/static/js/2.c5362fcc.chunk.js.map",
+    "index.html": "/swgoh-guild-resources/index.html",
+    "precache-manifest.0c098f253a6f3fa779c2d5d2421678d5.js": "/swgoh-guild-resources/precache-manifest.0c098f253a6f3fa779c2d5d2421678d5.js",
+    "service-worker.js": "/swgoh-guild-resources/service-worker.js",
+    "static/css/2.b0bb7f2c.chunk.css.map": "/swgoh-guild-resources/static/css/2.b0bb7f2c.chunk.css.map",
+    "static/css/main.0c96a878.chunk.css.map": "/swgoh-guild-resources/static/css/main.0c96a878.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2ff03298.js",
+    "static/css/2.b0bb7f2c.chunk.css",
+    "static/js/2.c5362fcc.chunk.js",
+    "static/css/main.0c96a878.chunk.css",
+    "static/js/main.e7983a45.chunk.js"
+  ]
+}
