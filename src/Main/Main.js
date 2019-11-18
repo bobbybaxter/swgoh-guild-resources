@@ -1,8 +1,9 @@
 import React from 'react';
 
-import roster from './GuildRoster.json';
+// import roster from './GuildRoster.json';
 
 import teamsData from '../helpers/data/teamsData';
+import GuildData from '../helpers/data/guildData';
 import GuildOptions from '../GuildOptions/GuildOptions';
 import TWDisplay from '../TWDisplay/TWDisplay';
 
@@ -48,25 +49,25 @@ const approvedTeamOrder = [
   // E-Tier
   'JAWAS',
   'CLONES_CODY',
-  'EP_ANTI_REBEL',
-  'EP_ANTI-TRAYA',
-  'EP_TRIO',
-  'EP_TRAYA',
+  // 'EP_ANTI_REBEL',
+  // 'EP_ANTI-TRAYA',
+  // 'EP_TRIO',
+  // 'EP_TRAYA',
   // Rest/Variations
-  'SION_SOLO',
+  // 'SION_SOLO',
   'DK_ANTI_REBEL',
   'DROIDS_ANTI_MALAK',
-  'NEST_SOLO',
+  // 'NEST_SOLO',
   'EWOKS_C3PO',
-  'GALACTIC_REPUBLIC_C3PO',
+  // 'GALACTIC_REPUBLIC_C3PO',
   'GK',
-  'IG-88_HI',
-  'JEDI_BASTILA_REVAN',
+  // 'IG-88_HI',
+  // 'JEDI_BASTILA_REVAN',
   'MAGMA',
   'NS_NEST',
   'QIRA_NEST_HODA',
   'QIRA_NEST_HODA_FULL',
-  'REBELS_CLS_THRAWN',
+  // 'REBELS_CLS_THRAWN',
   'REBELS_CLS_CHAZE',
   'REBELS_DANGER_ZONE',
   'JTR_DROIDS',
@@ -91,7 +92,11 @@ class Main extends React.Component {
         this.setState({ approvedTeams: orderedTeams });
       })
       .catch((err) => console.error(err));
-    this.setState({ guildData: roster.data, rawPlayerData: roster.players });
+    GuildData.getGuildData()
+      .then((res) => this.setState({ guildData: res.data, rawPlayerData: res.players }))
+      .catch((err) => console.error(err));
+    // FOR TESTING PURPOSES - to not ping swgoh.gg for testing
+    // this.setState({ guildData: roster.data, rawPlayerData: roster.players });
   }
 
   orderTeams = (t) => {
@@ -109,16 +114,17 @@ class Main extends React.Component {
 
     return (
       <>
-        <div className="main-header">
+        <div className="main-header text-center">
           <h1>{guildData.name}</h1>
           <div className="container d-flex flex-row justify-content-around">
-            <p>Members: {guildData.member_count}</p>
+            <p>Members: {guildData.profile_count}</p>
             <p>Galactic Power: {guildData.galactic_power ? guildData.galactic_power.toLocaleString() : ''}</p>
           </div>
         </div>
         <div>
           <GuildOptions />
           <TWDisplay
+            approvedTeamOrder = {approvedTeamOrder}
             approvedTeams = {approvedTeams}
             rawPlayerData = {rawPlayerData}
           />
