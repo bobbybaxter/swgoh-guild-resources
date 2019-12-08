@@ -30,7 +30,8 @@ class TWDisplay extends React.Component {
     const newRoster = [];
     const playerToons = Object.values(player)
       .map((p) => p)[0]
-      .filter((c) => c.data.combat_type === 1)
+      // REMOVED BECAUSE SOME CHARACTERS DON'T HAVE A COMBAT TYPE
+      // .filter((c) => c.data.combat_type === 1)
       .map((n) => n.data.name);
     const toonsWithPower = Object.values(player)
       .map((p) => p)[0]
@@ -69,8 +70,6 @@ class TWDisplay extends React.Component {
         approvedTeamList.splice(index, 1);
       }
     }
-
-
     return newRoster;
   }
 
@@ -231,7 +230,7 @@ class TWDisplay extends React.Component {
     const guildRoster = this.buildGuildRoster(rawPlayerData);
     this.setState({ guildRoster });
     // USED FOR SINGLE PLAYER TESTING
-    // const playerRoster = this.buildPlayerTeams(rawPlayerData[7]);
+    // const playerRoster = this.buildPlayerTeams(rawPlayerData[31]);
     // console.error('playerRoster', playerRoster);
   }
 
