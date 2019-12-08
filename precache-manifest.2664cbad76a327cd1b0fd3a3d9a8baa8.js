@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0ec4358a69a7b95753f0b22e9940c74e",
+    "revision": "730d9c2727bc942760260b6cacda06d6",
     "url": "/swgoh-guild-resources/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/swgoh-guild-resources/static/css/2.b0bb7f2c.chunk.css"
   },
   {
-    "revision": "9ca75e7c12252ed895ab",
+    "revision": "36b2f817fb5dd6f72826",
     "url": "/swgoh-guild-resources/static/css/main.0c96a878.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/swgoh-guild-resources/static/js/2.c5362fcc.chunk.js"
   },
   {
-    "revision": "9ca75e7c12252ed895ab",
-    "url": "/swgoh-guild-resources/static/js/main.e7983a45.chunk.js"
+    "revision": "36b2f817fb5dd6f72826",
+    "url": "/swgoh-guild-resources/static/js/main.2f0b34a8.chunk.js"
   },
   {
     "revision": "106621cdbb44763104a8",

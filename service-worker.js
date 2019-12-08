@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/swgoh-guild-resources/precache-manifest.0c098f253a6f3fa779c2d5d2421678d5.js"
+  "/swgoh-guild-resources/precache-manifest.2664cbad76a327cd1b0fd3a3d9a8baa8.js"
 );
 
 self.addEventListener('message', (event) => {
