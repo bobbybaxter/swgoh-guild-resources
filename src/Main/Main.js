@@ -1,5 +1,6 @@
 import React from 'react';
 
+// FOR TESTING PURPOSES
 // import roster from './GuildRoster.json';
 
 import teamsData from '../helpers/data/teamsData';
@@ -11,7 +12,7 @@ import './Main.scss';
 
 const approvedTeamOrder = [
   // S-Tier
-  // '501st'
+  '501ST',
   'SITH_EMPIRE_W_MALAK',
   'SITH_EMPIRE_WO_MALAK',
   'JEDI_REVAN',
